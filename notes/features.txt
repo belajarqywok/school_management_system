@@ -1,0 +1,10 @@
+--------------
+- Form Kelas (M)
+- Form Siswa (M)
+--------------
+- Form Pengajar (M)
+- Form Pegawai  (M)
+- Form Absensi Guru dan Pegawai (T)
+--------------
+- Form Mata Pelajaran (M)
+- Form Jadwal Mata Pelajaran (T)
