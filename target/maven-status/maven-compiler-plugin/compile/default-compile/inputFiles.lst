@@ -1,6 +1,10 @@
-F:\projects\application projects\uts_project\src\main\java\com\RoomData\Helpers\CachingService.java
-F:\projects\application projects\uts_project\src\main\java\com\RoomData\Views\RoomDataView.java
-F:\projects\application projects\uts_project\src\main\java\com\RoomData\Configurations\DatabaseConfigurations.java
-F:\projects\application projects\uts_project\src\main\java\com\RoomData\Dtos\RoomDataDto.java
-F:\projects\application projects\uts_project\src\main\java\com\RoomData\Repositories\RoomRepositories.java
-F:\projects\application projects\uts_project\src\main\java\com\RoomData\MainApplication.java
+F:\projects\application projects\school_management_system\src\main\java\com\SchoolManagementSystem\Dtos\RoomDataDto.java
+F:\projects\application projects\school_management_system\src\main\java\com\SchoolManagementSystem\Configurations\DatabaseConfigurations.java
+F:\projects\application projects\school_management_system\src\main\java\com\SchoolManagementSystem\MainApplication.java
+F:\projects\application projects\school_management_system\src\main\java\com\SchoolManagementSystem\Views\AuthView.java
+F:\projects\application projects\school_management_system\src\main\java\com\SchoolManagementSystem\Views\ClassView.java
+F:\projects\application projects\school_management_system\src\main\java\com\SchoolManagementSystem\Repositories\ClassesRepositories.java
+F:\projects\application projects\school_management_system\src\main\java\com\SchoolManagementSystem\Dtos\ClassesDto.java
+F:\projects\application projects\school_management_system\src\main\java\com\SchoolManagementSystem\Dtos\AuthDto.java
+F:\projects\application projects\school_management_system\src\main\java\com\SchoolManagementSystem\Helpers\CachingService.java
+F:\projects\application projects\school_management_system\src\main\java\com\SchoolManagementSystem\Repositories\AuthRepositories.java

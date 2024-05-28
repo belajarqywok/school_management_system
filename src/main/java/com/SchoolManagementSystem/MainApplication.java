@@ -1,26 +1,25 @@
 /**
  *
- * @author al-fariqy raihan azhwar
- * @npm 202143501514
+ * @author Anitaaa
+ * @npm 20224350xxx..
  * 
  */
 
 package com.SchoolManagementSystem;
 
 import javax.swing.SwingUtilities;
-import com.SchoolManagementSystem.Views.RoomDataView;
+import com.SchoolManagementSystem.Views.AuthView;
 
 public class MainApplication {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            RoomDataView roomDataView = new RoomDataView();
+            AuthView authView = new AuthView();
             
-            roomDataView.setVisible(true);
-            roomDataView.setResizable(false);
-            roomDataView.pack();
-            roomDataView.setLocationRelativeTo(null);
-            roomDataView.setDefaultCloseOperation(roomDataView.EXIT_ON_CLOSE);
-            
+            authView.setVisible(true);
+            authView.setResizable(false);
+            authView.pack();
+            authView.setLocationRelativeTo(null);
+            authView.setDefaultCloseOperation(authView.EXIT_ON_CLOSE);
         });
     }
 }

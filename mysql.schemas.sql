@@ -17,7 +17,7 @@ USE school_management_system_db;
 /*
     Table: Admin Auth
 */ 
-SET @username = "qywok";
+SET @username = "anita";
 SET @password = "tugasjava";
 
 CREATE TABLE admin_auth (

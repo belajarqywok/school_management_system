@@ -1,29 +1,37 @@
 package com.SchoolManagementSystem.Configurations;
 
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
-
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DatabaseConfigurations {
-    /*
-        Hikari Configuration
-    */
-    public Connection hikariConfiguration() {
-        HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:mysql://localhost/uts_visual_programming");
-        config.setUsername("root");
-        config.setPassword("");
-        config.setMaximumPoolSize(10);
 
-        HikariDataSource dataSource = new HikariDataSource(config);
-        
+public class DatabaseConfigurations {
+
+    private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/school_management_system_db";
+    private static final String USER = "root";
+    private static final String PASS = "";
+
+    private Connection connection;
+
+    public DatabaseConfigurations() {
         try {
-            return dataSource.getConnection();
-        } catch (SQLException exception) {
-            exception.printStackTrace();
-            return null;
+            Class.forName(JDBC_DRIVER);
+            connection = DriverManager.getConnection(DB_URL, USER, PASS);
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public Connection getConnection() {
+        return connection;
+    }
+
+    public void closeConnection() {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
