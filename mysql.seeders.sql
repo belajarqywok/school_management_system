@@ -28,15 +28,15 @@ INSERT INTO students (
 ) VALUES 
 (
     (SELECT class_id FROM class WHERE class_name = 'Kelas 1A'),
-    'NISN001', 'Student One', '2005-01-01', 'Male', '081234567890', 'Address 1'
+    'NISN001', 'Student One', '2005-01-01', 'Laki-Laki', '081234567890', 'Address 1'
 ),
 (
     (SELECT class_id FROM class WHERE class_name = 'Kelas 1B'),
-    'NISN002', 'Student Two', '2006-02-02', 'Female', '081234567891', 'Address 2'
+    'NISN002', 'Student Two', '2006-02-02', 'Perempuan', '081234567891', 'Address 2'
 ),
 (
     (SELECT class_id FROM class WHERE class_name = 'Kelas 1C'),
-    'NISN003', 'Student Three', '2007-03-03', 'Male', '081234567892', 'Address 3'
+    'NISN003', 'Student Three', '2007-03-03', 'Laki-Laki', '081234567892', 'Address 3'
 );
 
 /*

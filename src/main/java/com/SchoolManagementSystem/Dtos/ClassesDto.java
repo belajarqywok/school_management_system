@@ -5,7 +5,7 @@ package com.SchoolManagementSystem.Dtos;
  *  Classes DTO
  */
 public class ClassesDto {
-  public ClassesDto() {}
+  public ClassesDto() { }
 
   /**
    *  Class ID

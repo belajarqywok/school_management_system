@@ -208,8 +208,8 @@ public class AuthView extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordTextFieldActionPerformed
 
     private void ResetButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResetButtonMouseClicked
-        UsernameTextField.setText("  Masukan Nama Kelas ...");
-        PasswordTextField.setText("  Masukan Kapasitas Kelas ...");
+        UsernameTextField.setText("  Masukan Username ...");
+        PasswordTextField.setText("  Masukan Password ...");
     }//GEN-LAST:event_ResetButtonMouseClicked
 
     private void ResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetButtonActionPerformed
