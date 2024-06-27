@@ -15,7 +15,6 @@ import com.SchoolManagementSystem.Dtos.StudentDto;
 import com.SchoolManagementSystem.Configurations.DatabaseConfigurations;
 
 
-
 /**
  *  Student Repositories
  */
@@ -381,4 +380,5 @@ public class StudentRepositories extends DatabaseConfigurations {
       return studentsDataList;
     }
   }
+  
 }

@@ -113,11 +113,11 @@ CREATE TABLE employees (
   employee_id      VARCHAR(36)  DEFAULT (UUID()) PRIMARY KEY,
 
   -- Natural Key
-  employee_nip      VARCHAR(64) UNIQUE NOT NULL,
+  employee_nip     VARCHAR(64) UNIQUE NOT NULL,
 
-  employee_name    VARCHAR(64) NOT NULL,
+  employee_name    VARCHAR(64) UNIQUE NOT NULL,
   employee_birth   DATE        NOT NULL,
-  employee_gender  ENUM('Male', 'Female') NOT NULL,
+  employee_gender  ENUM('Laki-Laki', 'Perempuan') NOT NULL,
 
   employee_type    ENUM('Guru', 'Tata Usaha', 'Admin', 'Satpam', 'OB') NOT NULL,
 
@@ -225,7 +225,7 @@ CREATE TABLE subject_schedules (
   subject_id       VARCHAR(36)  NOT NULL,
   employee_id      VARCHAR(36)  NOT NULL,
 
-  day_of_week      ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') NOT NULL,
+  day_of_week      ENUM('Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu') NOT NULL,
   time_start       TIME NOT NULL,
   time_end         TIME NOT NULL,
 

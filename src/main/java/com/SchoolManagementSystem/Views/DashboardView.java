@@ -9,6 +9,12 @@ import javax.swing.JOptionPane;
 
 import com.SchoolManagementSystem.Views.AuthView;
 import com.SchoolManagementSystem.Views.ClassView;
+import com.SchoolManagementSystem.Views.StudentView;
+import com.SchoolManagementSystem.Views.SubjectView;
+import com.SchoolManagementSystem.Views.EmployeeView;
+import com.SchoolManagementSystem.Views.SubjectScheduleView;
+import com.SchoolManagementSystem.Views.StudentAttendanceView;
+import com.SchoolManagementSystem.Views.EmployeeAttendanceView;
 
 import com.SchoolManagementSystem.Repositories.AuthRepositories;
 
@@ -42,7 +48,7 @@ public class DashboardView extends javax.swing.JFrame {
         SubjectFeature = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        StudentDataFeature = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         StudentFeature = new javax.swing.JLabel();
         EmployeeFeature = new javax.swing.JPanel();
@@ -182,8 +188,13 @@ public class DashboardView extends javax.swing.JFrame {
                 .addGap(43, 43, 43))
         );
 
-        jPanel5.setBackground(new java.awt.Color(86, 85, 191));
-        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        StudentDataFeature.setBackground(new java.awt.Color(86, 85, 191));
+        StudentDataFeature.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        StudentDataFeature.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                StudentDataFeatureMouseClicked(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon("F:\\projects\\application projects\\school_management_system\\icons\\student.png")); // NOI18N
 
@@ -191,32 +202,37 @@ public class DashboardView extends javax.swing.JFrame {
         StudentFeature.setForeground(new java.awt.Color(255, 255, 255));
         StudentFeature.setText("Data Siswa");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout StudentDataFeatureLayout = new javax.swing.GroupLayout(StudentDataFeature);
+        StudentDataFeature.setLayout(StudentDataFeatureLayout);
+        StudentDataFeatureLayout.setHorizontalGroup(
+            StudentDataFeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StudentDataFeatureLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(StudentFeature)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        StudentDataFeatureLayout.setVerticalGroup(
+            StudentDataFeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StudentDataFeatureLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGroup(StudentDataFeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentDataFeatureLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentDataFeatureLayout.createSequentialGroup()
                         .addComponent(StudentFeature)
                         .addGap(37, 37, 37))))
         );
 
         EmployeeFeature.setBackground(new java.awt.Color(86, 85, 191));
         EmployeeFeature.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EmployeeFeature.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EmployeeFeatureMouseClicked(evt);
+            }
+        });
 
         jLabel6.setIcon(new javax.swing.ImageIcon("F:\\projects\\application projects\\school_management_system\\icons\\teacher.png")); // NOI18N
 
@@ -258,6 +274,11 @@ public class DashboardView extends javax.swing.JFrame {
 
         SubjectScheduleFeature.setBackground(new java.awt.Color(86, 85, 191));
         SubjectScheduleFeature.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SubjectScheduleFeature.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubjectScheduleFeatureMouseClicked(evt);
+            }
+        });
 
         jLabel11.setIcon(new javax.swing.ImageIcon("F:\\projects\\application projects\\school_management_system\\icons\\schdule.png")); // NOI18N
 
@@ -299,6 +320,11 @@ public class DashboardView extends javax.swing.JFrame {
 
         EmployeeAttendanceFeature.setBackground(new java.awt.Color(86, 85, 191));
         EmployeeAttendanceFeature.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EmployeeAttendanceFeature.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EmployeeAttendanceFeatureMouseClicked(evt);
+            }
+        });
 
         jLabel14.setIcon(new javax.swing.ImageIcon("F:\\projects\\application projects\\school_management_system\\icons\\attend.png")); // NOI18N
 
@@ -340,6 +366,11 @@ public class DashboardView extends javax.swing.JFrame {
 
         StudentAttendanceFeature.setBackground(new java.awt.Color(86, 85, 191));
         StudentAttendanceFeature.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        StudentAttendanceFeature.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                StudentAttendanceFeatureMouseClicked(evt);
+            }
+        });
 
         jLabel17.setIcon(new javax.swing.ImageIcon("F:\\projects\\application projects\\school_management_system\\icons\\att_student.png")); // NOI18N
 
@@ -384,7 +415,7 @@ public class DashboardView extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(EmployeeAttendanceFeature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(StudentDataFeature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(EmployeeFeature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -400,7 +431,7 @@ public class DashboardView extends javax.swing.JFrame {
                 .addGap(131, 131, 131)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(ClassFeature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(StudentDataFeature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(EmployeeFeature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SubjectFeature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(37, 37, 37)
@@ -450,8 +481,76 @@ public class DashboardView extends javax.swing.JFrame {
     }//GEN-LAST:event_LogoutButtonMouseClicked
 
     private void SubjectFeatureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubjectFeatureMouseClicked
-        // TODO add your handling code here:
+        SubjectView subjectView = new SubjectView();
+            
+        subjectView.setVisible(true);
+        subjectView.setResizable(false);
+        subjectView.pack();
+        subjectView.setLocationRelativeTo(null);
+        subjectView.setDefaultCloseOperation(subjectView.EXIT_ON_CLOSE);
+        
+        this.setVisible(false);
     }//GEN-LAST:event_SubjectFeatureMouseClicked
+
+    private void StudentDataFeatureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentDataFeatureMouseClicked
+        StudentView studentView = new StudentView();
+            
+        studentView.setVisible(true);
+        studentView.setResizable(false);
+        studentView.pack();
+        studentView.setLocationRelativeTo(null);
+        studentView.setDefaultCloseOperation(studentView.EXIT_ON_CLOSE);
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_StudentDataFeatureMouseClicked
+
+    private void EmployeeFeatureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmployeeFeatureMouseClicked
+        EmployeeView employeeView = new EmployeeView();
+            
+        employeeView.setVisible(true);
+        employeeView.setResizable(false);
+        employeeView.pack();
+        employeeView.setLocationRelativeTo(null);
+        employeeView.setDefaultCloseOperation(employeeView.EXIT_ON_CLOSE);
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_EmployeeFeatureMouseClicked
+
+    private void SubjectScheduleFeatureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubjectScheduleFeatureMouseClicked
+        SubjectScheduleView subjectScheduleView = new SubjectScheduleView();
+            
+        subjectScheduleView.setVisible(true);
+        subjectScheduleView.setResizable(false);
+        subjectScheduleView.pack();
+        subjectScheduleView.setLocationRelativeTo(null);
+        subjectScheduleView.setDefaultCloseOperation(subjectScheduleView.EXIT_ON_CLOSE);
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_SubjectScheduleFeatureMouseClicked
+
+    private void EmployeeAttendanceFeatureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmployeeAttendanceFeatureMouseClicked
+        EmployeeAttendanceView employeeAttendanceView = new EmployeeAttendanceView();
+            
+        employeeAttendanceView.setVisible(true);
+        employeeAttendanceView.setResizable(false);
+        employeeAttendanceView.pack();
+        employeeAttendanceView.setLocationRelativeTo(null);
+        employeeAttendanceView.setDefaultCloseOperation(employeeAttendanceView.EXIT_ON_CLOSE);
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_EmployeeAttendanceFeatureMouseClicked
+
+    private void StudentAttendanceFeatureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StudentAttendanceFeatureMouseClicked
+        StudentAttendanceView studentAttendanceView = new StudentAttendanceView();
+            
+        studentAttendanceView.setVisible(true);
+        studentAttendanceView.setResizable(false);
+        studentAttendanceView.pack();
+        studentAttendanceView.setLocationRelativeTo(null);
+        studentAttendanceView.setDefaultCloseOperation(studentAttendanceView.EXIT_ON_CLOSE);
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_StudentAttendanceFeatureMouseClicked
 
     /**
      * @param args the command line arguments
@@ -509,6 +608,7 @@ public class DashboardView extends javax.swing.JFrame {
     private javax.swing.JPanel EmployeeFeature;
     private javax.swing.JLabel LogoutButton;
     private javax.swing.JPanel StudentAttendanceFeature;
+    private javax.swing.JPanel StudentDataFeature;
     private javax.swing.JLabel StudentFeature;
     private javax.swing.JPanel SubjectFeature;
     private javax.swing.JPanel SubjectScheduleFeature;
@@ -531,6 +631,5 @@ public class DashboardView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
 }

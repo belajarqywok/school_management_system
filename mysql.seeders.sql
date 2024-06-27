@@ -52,15 +52,15 @@ INSERT INTO employees (
     employee_address
 ) VALUES 
 (
-    'NIP001', 'Employee One', '1980-01-01', 'Male',
+    'NIP001', 'Employee One', '1980-01-01', 'Laki-Laki',
     'Tata Usaha', '081234567890', 'Address 1'
 ),
 (
-    'NIP002', 'Employee Two', '1981-02-02', 'Female',
+    'NIP002', 'Employee Two', '1981-02-02', 'Perempuan',
     'Guru', '081234567891', 'Address 2'
 ),
 (
-    'NIP003', 'Employee Three', '1982-03-03', 'Male',
+    'NIP003', 'Employee Three', '1982-03-03', 'Laki-Laki',
     'Admin', '081234567892', 'Address 3'
 );
 
@@ -132,21 +132,21 @@ INSERT INTO subject_schedules (
     (SELECT class_id FROM class WHERE class_name = 'Kelas 1A'), 
     (SELECT subject_id FROM subjects WHERE subject_name = 'Math'), 
     (SELECT employee_id FROM employees WHERE employee_nip = 'NIP002'), 
-    'Monday', '08:00:00', '09:30:00'
+    'Senin', '08:00:00', '09:30:00'
 ),
 
 (
     (SELECT class_id FROM class WHERE class_name = 'Kelas 1B'), 
     (SELECT subject_id FROM subjects WHERE subject_name = 'Science'), 
     (SELECT employee_id FROM employees WHERE employee_nip = 'NIP002'), 
-    'Tuesday', '10:00:00', '11:30:00'
+    'Selasa', '10:00:00', '11:30'
 ),
 
 (
     (SELECT class_id FROM class WHERE class_name = 'Kelas 1C'), 
     (SELECT subject_id FROM subjects WHERE subject_name = 'History'), 
     (SELECT employee_id FROM employees WHERE employee_nip = 'NIP002'), 
-    'Wednesday', '13:00:00', '14:30:00'
+    'Rabu', '13:00:00', '14:30'
 );
 
 

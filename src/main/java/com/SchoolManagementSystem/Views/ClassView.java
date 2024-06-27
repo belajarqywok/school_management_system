@@ -114,7 +114,7 @@ public class ClassView extends javax.swing.JFrame {
         EditButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        NameRoomLabel1 = new javax.swing.JLabel();
+        BackButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -254,15 +254,15 @@ public class ClassView extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Data Kelas");
 
-        NameRoomLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        NameRoomLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        NameRoomLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        NameRoomLabel1.setText("  Kembali  ");
-        NameRoomLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        NameRoomLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        NameRoomLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        BackButton.setBackground(new java.awt.Color(255, 255, 255));
+        BackButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(255, 255, 255));
+        BackButton.setText("  Kembali  ");
+        BackButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                NameRoomLabel1MouseClicked(evt);
+                BackButtonMouseClicked(evt);
             }
         });
 
@@ -274,7 +274,7 @@ public class ClassView extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(NameRoomLabel1)
+                .addComponent(BackButton)
                 .addGap(25, 25, 25))
         );
         jPanel3Layout.setVerticalGroup(
@@ -283,7 +283,7 @@ public class ClassView extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(NameRoomLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
         );
 
@@ -439,7 +439,7 @@ public class ClassView extends javax.swing.JFrame {
         TableHandler("searching", SearchTextField.getText());
     }//GEN-LAST:event_SearchButtonMouseClicked
 
-    private void NameRoomLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NameRoomLabel1MouseClicked
+    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         DashboardView dashboardView = new DashboardView();
             
         dashboardView.setVisible(true);
@@ -449,7 +449,7 @@ public class ClassView extends javax.swing.JFrame {
         dashboardView.setDefaultCloseOperation(dashboardView.EXIT_ON_CLOSE);
 
         this.setVisible(false);
-    }//GEN-LAST:event_NameRoomLabel1MouseClicked
+    }//GEN-LAST:event_BackButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -491,13 +491,13 @@ public class ClassView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddButton;
+    private javax.swing.JLabel BackButton;
     private javax.swing.JTextField ClassCapacityTextField;
     private javax.swing.JTextField ClassNameTextField;
     private javax.swing.JTable ClassesTable;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton EditButton;
     private javax.swing.JLabel NameRoomLabel;
-    private javax.swing.JLabel NameRoomLabel1;
     private javax.swing.JButton ResetButton;
     private javax.swing.JButton SearchButton;
     private javax.swing.JTextField SearchTextField;

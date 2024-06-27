@@ -11,10 +11,14 @@ import com.SchoolManagementSystem.Views.DashboardView;
 
 import com.SchoolManagementSystem.Dtos.StudentDto;
 import com.SchoolManagementSystem.Helpers.CachingService;
+import com.SchoolManagementSystem.Repositories.SuperRepositories;
 import com.SchoolManagementSystem.Repositories.StudentRepositories;
 
 public class StudentView extends javax.swing.JFrame {
     private DefaultTableModel tableModel;
+    
+    // Super Repositories
+    private final SuperRepositories superRepositories = new SuperRepositories();
     
     // Classes Repositories
     private final StudentRepositories studentRepositories =
@@ -24,7 +28,9 @@ public class StudentView extends javax.swing.JFrame {
     private StudentDto studentDto = new StudentDto();
     
     private ArrayList<String> studentIdLists = new ArrayList<>();
-    private ArrayList<String> classNameLists = new ArrayList<>();
+    
+    private List<String> classNames = superRepositories
+        .getClassNameRepository();
     
     public StudentView() {
         initComponents();
@@ -33,9 +39,10 @@ public class StudentView extends javax.swing.JFrame {
         ClassComboBoxHandler();
     }
     
-    private void ClassComboBoxHandler() {           
-        for (String className: classNameLists) {
-            if (StudentClassComboBox.getItemCount() >= classNameLists.size()) {
+    private void ClassComboBoxHandler() {
+        classNames = superRepositories.getClassNameRepository();
+        for (String className: classNames) {
+            if (StudentClassComboBox.getItemCount() >= classNames.size()) {
                 StudentClassComboBox.removeAllItems();
             }
                 
@@ -87,7 +94,6 @@ public class StudentView extends javax.swing.JFrame {
             });
             
             studentIdLists.add(studentId);
-            classNameLists.add(className);
             index ++;
         }
     }
@@ -136,7 +142,7 @@ public class StudentView extends javax.swing.JFrame {
         EditButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        NameRoomLabel1 = new javax.swing.JLabel();
+        BackButton = new javax.swing.JLabel();
         StudentNameTextField = new javax.swing.JTextField();
         NameRoomLabel2 = new javax.swing.JLabel();
         NameRoomLabel3 = new javax.swing.JLabel();
@@ -275,15 +281,15 @@ public class StudentView extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Data Siswa");
 
-        NameRoomLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        NameRoomLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        NameRoomLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        NameRoomLabel1.setText("  Kembali  ");
-        NameRoomLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        NameRoomLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        NameRoomLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        BackButton.setBackground(new java.awt.Color(255, 255, 255));
+        BackButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(255, 255, 255));
+        BackButton.setText("  Kembali  ");
+        BackButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                NameRoomLabel1MouseClicked(evt);
+                BackButtonMouseClicked(evt);
             }
         });
 
@@ -295,7 +301,7 @@ public class StudentView extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(NameRoomLabel1)
+                .addComponent(BackButton)
                 .addGap(25, 25, 25))
         );
         jPanel3Layout.setVerticalGroup(
@@ -304,7 +310,7 @@ public class StudentView extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(NameRoomLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
         );
 
@@ -565,7 +571,7 @@ public class StudentView extends javax.swing.JFrame {
     }//GEN-LAST:event_AddButtonMouseClicked
 
     private void ResetButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResetButtonMouseClicked
-        StudentClassComboBox.setSelectedItem((Object) classNameLists.get(0));
+        StudentClassComboBox.setSelectedItem((Object) classNames.get(0));
         StudentNisnTextField.setText("  Masukan NISN Siswa ...");
         StudentNameTextField.setText("  Masukan Nama Siswa ...");
         StudentBirthTextField.setText("  Masukan Tanggal Lahir ...");
@@ -608,7 +614,7 @@ public class StudentView extends javax.swing.JFrame {
         TableHandler("searching", SearchTextField.getText());
     }//GEN-LAST:event_SearchButtonMouseClicked
 
-    private void NameRoomLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NameRoomLabel1MouseClicked
+    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         DashboardView dashboardView = new DashboardView();
             
         dashboardView.setVisible(true);
@@ -618,7 +624,7 @@ public class StudentView extends javax.swing.JFrame {
         dashboardView.setDefaultCloseOperation(dashboardView.EXIT_ON_CLOSE);
 
         this.setVisible(false);
-    }//GEN-LAST:event_NameRoomLabel1MouseClicked
+    }//GEN-LAST:event_BackButtonMouseClicked
 
     private void StudentNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentNameTextFieldActionPerformed
         // TODO add your handling code here:
@@ -676,10 +682,10 @@ public class StudentView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddButton;
+    private javax.swing.JLabel BackButton;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton EditButton;
     private javax.swing.JLabel NameRoomLabel;
-    private javax.swing.JLabel NameRoomLabel1;
     private javax.swing.JLabel NameRoomLabel2;
     private javax.swing.JLabel NameRoomLabel3;
     private javax.swing.JLabel NameRoomLabel4;
